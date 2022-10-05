@@ -1,26 +1,29 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
     "module": "esnext",
-    "moduleResolution": "node",
     "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "target": "es5",
+    "jsx": "react",
+    "sourceMap": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "lib": ["dom", "esnext", "es2021.intl", "webworker"],
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "downlevelIteration": true,
+    "types": [
+      // allows webpack module.hot
+      "webpack-env"
+    ],
+    "incremental": true
   },
   "include": [
-    "src"
+    "./ClientApp"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
