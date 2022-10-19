@@ -14,14 +14,11 @@
     "lib": ["dom", "esnext", "es2021.intl", "webworker"],
     "isolatedModules": true,
     "downlevelIteration": true,
-    "types": [
-      // allows webpack module.hot
-      "webpack-env"
-    ],
     "incremental": true
   },
   "include": [
-    "./ClientApp"
+    "./ClientApp",
+    "tsconfig.json"
   ],
   "exclude": [
     "node_modules"
