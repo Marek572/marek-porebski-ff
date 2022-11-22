@@ -1,7 +1,11 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect} from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 
 import {Menu} from './Menu';
+import {getUsers} from '../../actions/usersActions'
+
+type GetUsers = ReturnType<typeof getUsers>
 
 const Wrapper = styled.div`
     width: 100%;
@@ -17,6 +21,11 @@ interface IProps{
 }
 
 export const Layout: FC<IProps> = props => {
+    const dispatch = useDispatch();
+
+    useEffect(()=> {
+        dispatch<GetUsers>(getUsers());
+    }, [dispatch]);
     return(
         <Wrapper>
             <Menu />
